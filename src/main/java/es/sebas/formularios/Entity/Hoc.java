@@ -1,5 +1,8 @@
 package es.sebas.formularios.Entity;
 
+import java.sql.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,8 +22,32 @@ public class Hoc {
 	private Boolean portatil;
 	private Integer edad;
 	private String email;
+	private String telefono;
+	private String curso;
+	@Column(name="fecha_registro")
+	private Date fechaRegistro;
 
 	
+	public String getTelefono() {
+		return telefono;
+	}
+
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+
+	public String getCurso() {
+		return curso;
+	}
+
+
+	public void setCurso(String curso) {
+		this.curso = curso;
+	}
+
+
 	public String getNombreNino() {
 		return nombreNino;
 	}

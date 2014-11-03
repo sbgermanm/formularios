@@ -23,7 +23,7 @@
 	<!-- emf -->
 	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		id="emf">
-		<property name="packagesToScan" value="es.sebas.formularois.Entity" />
+		<property name="packagesToScan" value="es.sebas.formularios.Entity" />
 		<property name="dataSource" ref="fuenteDePatos" />
 		<property name="jpaProperties">
 			<props>
@@ -45,6 +45,6 @@
 	</bean>
 
 	<!-- jpa repository -->
-	<jpa:repositories base-package="es.sebas.formularios.Repository" />
+	<jpa:repositories base-package="es.sebas.formularios.Repository" entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"/>
 
 </beans>
