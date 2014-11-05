@@ -8,9 +8,9 @@
 	<definition name="comun" template="/WEB-INF/layout/classic.jsp">
 		<put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"></put-attribute>
 	</definition>
-	<definition name="xxxx" extends="comun">
-		<put-attribute name="title" value="Formulario XXXX"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/jsp/xxxx.jsp"></put-attribute>
+	<definition name="hoc-form" extends="comun">
+		<put-attribute name="title" value="Formulario taller programación"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/hocform.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>
