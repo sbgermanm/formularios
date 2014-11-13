@@ -36,10 +36,26 @@
 	</div>
 
 
+	<div class="form-group">
+		<label for="nombrepapa" class="col-sm-2 control-label">Nombre
+			papa</label>
+		<div class="col-sm-10">
+			<form:input path="nombrePadre" class="form-control" />
+		</div>
+	</div>
 
 
 
-
+	<div class="form-group">
+		<label for="portatil" class="col-sm-2 control-label">Portatil</label>
+		<div class="col-sm-10">
+			<label class="radio-inline"> <form:radiobutton
+					path="portatil" value="true" /> Si
+			</label> <label class="radio-inline"> <form:radiobutton
+					path="portatil" value="false" /> No
+			</label>
+		</div>
+	</div>
 
 
 	<div class="form-group">
