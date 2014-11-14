@@ -11,7 +11,7 @@ import es.sebas.formularios.Repository.UsuarioRepository;
 
 @Service
 @Transactional
-public class dbInitializer {
+public class DbInitializer {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
