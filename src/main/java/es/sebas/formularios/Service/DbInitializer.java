@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import es.sebas.formularios.Entity.Usuario;
@@ -19,7 +20,9 @@ public class DbInitializer {
 	@PostConstruct
 	public void init()
 	{
-		Usuario user = new Usuario("sebas", "sebas");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(); 
+		Usuario user = new Usuario("sebas", encoder.encode("sebas"), "ADMINISTRADOR", true);
+		
 		usuarioRepository.save(user);
 	}
 	

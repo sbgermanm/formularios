@@ -15,5 +15,9 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/hocform.jsp"></put-attribute>
 	</definition>
 
+	<definition name="login" extends="comun">
+		<put-attribute name="title" value="Login"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>

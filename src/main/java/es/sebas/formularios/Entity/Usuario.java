@@ -13,12 +13,32 @@ public class Usuario {
 	
 	private String nombre;
 	private String password;
+	private String rol;
+	private boolean enabled;
 	
 	
-	public Usuario(String nombre, String password) {
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getRol() {
+		return rol;
+	}
+
+	public void setRol(String rol) {
+		this.rol = rol;
+	}
+
+	public Usuario(String nombre, String password, String rol, Boolean enabled) {
 		super();
 		this.nombre = nombre;
 		this.password = password;
+		this.rol= rol;
+		this.enabled = enabled;
 	}
 	
 	public String getNombre() {
