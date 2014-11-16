@@ -10,15 +10,14 @@ import es.sebas.formularios.Repository.HocRepository;
 
 @Service
 @Transactional
-public class HocService {
-
+public class HocFormService {
+	
+	
 	@Autowired
 	private HocRepository hocRepository;
-	
-	
-	
-	public static void save(Hoc hoc) {
-		hocRepository.save(hoc);
-	}
 
+	
+	public void save(Hoc hocform){
+		hocRepository.save(hocform);
+	}
 }

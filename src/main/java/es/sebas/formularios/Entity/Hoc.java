@@ -11,6 +11,16 @@ import javax.persistence.Id;
 @Entity
 public class Hoc {
 
+	public Date getFechaRegistro() {
+		return fechaRegistro;
+	}
+
+
+	public void setFechaRegistro(Date fechaRegistro) {
+		this.fechaRegistro = fechaRegistro;
+	}
+
+
 	@Id
 	@GeneratedValue
 	private Integer Id;
