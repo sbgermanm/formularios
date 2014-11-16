@@ -1,5 +1,7 @@
 package es.sebas.formularios.Service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +21,11 @@ public class HocFormService {
 	
 	public void save(Hoc hocform){
 		hocRepository.save(hocform);
+	}
+
+
+	public List<Hoc> damelosTodos() {
+		
+		return hocRepository.findAll();
 	}
 }

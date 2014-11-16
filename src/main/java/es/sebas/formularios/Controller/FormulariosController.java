@@ -1,5 +1,7 @@
 package es.sebas.formularios.Controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,6 +33,7 @@ public class FormulariosController {
 
 	@RequestMapping(value="/hoc", method = RequestMethod.POST)
 	public String suscribeHoc(@ModelAttribute("hoc") Hoc hoc) {
+		hoc.setFechaRegistro(new Date());
 		hocFormService.save(hoc);
 		return "hocform";
 	}
