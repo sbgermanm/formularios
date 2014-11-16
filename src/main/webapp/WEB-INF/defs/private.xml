@@ -11,9 +11,15 @@
 	</definition>
 
 	<definition name="resumen" extends="base">
-		<put-attribute name="title" value="Log-in"></put-attribute>
+		<put-attribute name="title" value="Resumen"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/jsp/resumen.jsp"></put-attribute>
+		<put-attribute name="current" value="resumen"></put-attribute>
 	</definition>
 
+	<definition name="prog" extends="base">
+		<put-attribute name="title" value="Taller de programacion"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/prog.jsp"></put-attribute>
+		<put-attribute name="current" value="prog"></put-attribute>
+	</definition>
 
 </tiles-definitions>

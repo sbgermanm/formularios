@@ -11,6 +11,15 @@ public class AdminController {
 		return "login";
 	}
 	
+	@RequestMapping("/resumen")
+	public String resumen(){
+		return "resumen";
+	}
+
+	@RequestMapping("/taller_programacion")
+	public String prog(){
+		return "prog";
+	}
 
 
 	
