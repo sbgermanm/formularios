@@ -24,14 +24,20 @@ public class AdminController {
 	
 	@RequestMapping("/resumen")
 	public String resumen(Model modelo){
-		List<Hoc> apuntadosProg = hocFormService.damelosTodos(); 
-		modelo.addAttribute("apuntadoProg", apuntadosProg);
+		recuperaApuntadosTallerProgramacion(modelo);
 		return "resumen";
 	}
 
+
 	@RequestMapping("/taller_programacion")
-	public String prog(){
+	public String prog(Model modelo){
+		recuperaApuntadosTallerProgramacion(modelo);
 		return "prog";
+	}
+
+	private void recuperaApuntadosTallerProgramacion(Model modelo) {
+		List<Hoc> apuntadosProg = hocFormService.damelosTodos(); 
+		modelo.addAttribute("apuntadoProg", apuntadosProg);
 	}
 
 

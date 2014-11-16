@@ -1,15 +1,20 @@
 package es.sebas.formularios.Controller;
 
+import java.security.Principal;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.sebas.formularios.Entity.Hoc;
+import es.sebas.formularios.Repository.UsuarioRepository;
 import es.sebas.formularios.Service.HocFormService;
+import es.sebas.formularios.Service.UsuarioService;
 
 @Controller
 public class FormulariosController {
@@ -17,6 +22,8 @@ public class FormulariosController {
 	@Autowired
 	private HocFormService hocFormService;
 	
+	@Autowired
+	private UsuarioService usuarioService;
 	
 	
 	@ModelAttribute("hoc")
@@ -25,17 +32,25 @@ public class FormulariosController {
 	}
 
 	@RequestMapping("/hoc")
-	public String showHocForm() {
+	public String showHocForm(Principal principal) {
 		System.out.println("entró");
-
-		return "hocform";
+		String vista = "hocform";
+		if ((null != principal) && (usuarioService.esAdministrador(principal))) {
+			vista = "hocformAdmin";
+		}
+		return vista;
 	}
 
 	@RequestMapping(value="/hoc", method = RequestMethod.POST)
-	public String suscribeHoc(@ModelAttribute("hoc") Hoc hoc) {
+	public String suscribeHoc(@ModelAttribute("hoc") Hoc hoc, Principal principal) {
 		hoc.setFechaRegistro(new Date());
 		hocFormService.save(hoc);
-		return "hocform";
+
+		String vista = "hocform";
+		if ((null != principal) && (usuarioService.esAdministrador(principal))) {
+			vista = "hocformAdmin";
+		}
+		return vista;
 	}
 	
 	

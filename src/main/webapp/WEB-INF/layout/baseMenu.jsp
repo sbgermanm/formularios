@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>	
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <!DOCTYPE html >
 <html>
@@ -24,15 +24,17 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="/redist/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/security/tags"
+	prefix="security"%>
 
 
 </head>
 <body>
 
 	<!-- Controlar el menu activo -->
-	<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras"	prefix="tilesx"%>
+	<%@ taglib uri="http://tiles.apache.org/tags-tiles-extras"
+		prefix="tilesx"%>
 	<tilesx:useAttribute name="current" />
 
 	<div class="container">
@@ -56,12 +58,25 @@
 							<li class="${current == 'resumen' ? 'active' : ''}"><a
 								href='<spring:url value="/resumen.html" />'>Resumen</a></li>
 							<li class="${current == 'prog' ? 'active' : ''}"><a
-								href="<spring:url value="/taller_programacion.html" />">Taller programacion</a></li>
+								href="<spring:url value="/taller_programacion.html" />">Taller
+									programacion</a></li>
+
+
+							<li class="dropdown ${current == 'formularios' ? 'active' : ''}"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown" role="button" aria-expanded="false">Formularios
+									<span class="caret"></span>
+							</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href='<spring:url value="/hoc.html" />'>Taller programación</a></li>
+									<!-- 								<li class="divider"></li> -->
+									<!-- 								<li class="dropdown-header">Nav header</li> -->
+									<!-- 								<li><a href="#">Separated link</a></li> -->
+									<!-- 								<li><a href="#">One more separated link</a></li> -->
+								</ul></li>
 						</security:authorize>
-
-
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<spring:url value="/logout" />">Logout</a></li>
-
 					</ul>
 				</div>
 				<!--/.nav-collapse -->

@@ -17,6 +17,16 @@ public class Usuario {
 	private boolean enabled;
 	
 	
+	public static final String ADMINISTRADOR = "ADMINISTRADOR";
+	
+	
+	
+	
+	
+	public Usuario() {
+		super();
+	}
+
 	public Boolean getEnabled() {
 		return enabled;
 	}

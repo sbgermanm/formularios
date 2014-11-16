@@ -22,4 +22,10 @@
 		<put-attribute name="current" value="prog"></put-attribute>
 	</definition>
 
+	<definition name="hocformAdmin" extends="base">
+		<put-attribute name="title" value="Formulario del taller de programacion"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/jsp/hocform.jsp"></put-attribute>
+		<put-attribute name="current" value="formularios"></put-attribute>
+	</definition>
+
 </tiles-definitions>

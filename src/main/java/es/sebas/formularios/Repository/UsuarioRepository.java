@@ -6,4 +6,6 @@ import es.sebas.formularios.Entity.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
+	Usuario findByNombre(String name);
+
 }
