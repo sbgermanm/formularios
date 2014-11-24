@@ -7,8 +7,10 @@
 <!-- http://www.mkyong.com/spring-mvc/spring-mvc-dropdown-box-example/ -->
 
 <form:form commandName="hoc" class="form-horizontal" role="form">
-
-	<div class="form-group">
+	<c:if test="${param.success eq true}">
+		<div class="alert alert-success">Registration successfull!</div>
+	</c:if>
+		<div class="form-group">
 		<label for="nombrenino" class="col-sm-2 control-label">Nombre
 			niño</label>
 		<div class="col-sm-10">

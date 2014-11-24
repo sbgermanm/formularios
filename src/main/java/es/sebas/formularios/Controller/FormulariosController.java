@@ -4,15 +4,12 @@ import java.security.Principal;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import es.sebas.formularios.Entity.Hoc;
-import es.sebas.formularios.Repository.UsuarioRepository;
 import es.sebas.formularios.Service.HocFormService;
 import es.sebas.formularios.Service.UsuarioService;
 
@@ -46,9 +43,11 @@ public class FormulariosController {
 		hoc.setFechaRegistro(new Date());
 		hocFormService.save(hoc);
 
-		String vista = "hocform";
+//		String vista = "hocform";
+		String vista = "redirect:/hoc.html?success=true";
 		if ((null != principal) && (usuarioService.esAdministrador(principal))) {
-			vista = "hocformAdmin";
+//			vista = "hocformAdmin";
+			vista = "redirect:/hoc.html?success=true";
 		}
 		return vista;
 	}
