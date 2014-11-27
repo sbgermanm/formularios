@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -25,9 +26,10 @@ public class Hoc {
 	@GeneratedValue
 	private Integer Id;
 	
-	
+	@Size(min = 2, max=256,  message = "El nombre debe tener al menos 2 caracteres")
 	private String nombreNino;
 
+	@Size(min = 2, max=256,  message = "El nombre debe tener al menos 2 caracteres")
 	private String nombrePadre;
 	private Boolean portatil;
 	private Integer edad;
