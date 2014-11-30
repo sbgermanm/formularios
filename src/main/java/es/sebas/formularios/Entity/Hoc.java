@@ -50,7 +50,7 @@ public class Hoc {
 	@Email
 	private String email;
 	
-	@Pattern(regexp="(^$|[0-9]{10})", message = "Debe escribir un numero de teléfono válido")
+	@Pattern(regexp="(^$|[0-9]{9})", message = "Debe escribir un numero de teléfono válido")
 	private String telefono;
 
 	private String curso;
