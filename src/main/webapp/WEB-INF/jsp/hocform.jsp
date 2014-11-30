@@ -10,11 +10,12 @@
 	<c:if test="${param.success eq true}">
 		<div class="alert alert-success">Registration successfull!</div>
 	</c:if>
-		<div class="form-group">
+	<div class="form-group">
 		<label for="nombrenino" class="col-sm-2 control-label">Nombre
 			niño</label>
 		<div class="col-sm-10">
 			<form:input path="nombreNino" class="form-control" />
+			<form:errors path="nombreNino" />
 		</div>
 	</div>
 
@@ -22,6 +23,7 @@
 		<label for="edadnino" class="col-sm-2 control-label">Edad niño</label>
 		<div class="col-sm-10">
 			<form:input path="edad" class="form-control" />
+			<form:errors path="edad" />
 		</div>
 	</div>
 
@@ -43,6 +45,7 @@
 			papa</label>
 		<div class="col-sm-10">
 			<form:input path="nombrePadre" class="form-control" />
+		<form:errors path="nombrePadre" />
 		</div>
 	</div>
 
@@ -64,13 +67,16 @@
 		<label for="email" class="col-sm-2 control-label">Email</label>
 		<div class="col-sm-10">
 			<form:input path="email" cssClass="form-control" />
+		<form:errors path="email" />
 		</div>
+
 	</div>
 
 	<div class="form-group">
 		<label for="telefono" class="col-sm-2 control-label">Teléfono</label>
 		<div class="col-sm-10">
 			<form:input path="telefono" cssClass="form-control" />
+		<form:errors path="telefono" />
 		</div>
 	</div>
 
