@@ -38,13 +38,15 @@ public class Hoc {
 	@NotNull
 	@Size(min = 2, max=256,  message = "El nombre debe tener al menos 2 caracteres")
 	private String nombrePadre;
+	
+	@NotNull(message = "Debe indicar si traera portatil")
 	private Boolean portatil;
 
 	@NotNull
 	@Digits(integer=2, fraction=0, message = "La edad debe estar entre 0 y 99")
 	private Integer edad;
 	
-	@NotNull
+	@NotNull(message = "Es necesario indicar un email")
 	@Email
 	private String email;
 	
