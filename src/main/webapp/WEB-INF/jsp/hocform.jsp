@@ -6,7 +6,8 @@
 
 <!-- http://www.mkyong.com/spring-mvc/spring-mvc-dropdown-box-example/ -->
 
-<form:form commandName="hoc" class="form-horizontal formulario_hoc" role="form">
+<form:form commandName="hoc" class="form-horizontal formulario_hoc"
+	role="form">
 	<c:if test="${param.success eq true}">
 		<div class="alert alert-success">Registration successfull!</div>
 	</c:if>
@@ -45,7 +46,7 @@
 			papa</label>
 		<div class="col-sm-10">
 			<form:input path="nombrePadre" class="form-control" />
-		<form:errors path="nombrePadre" />
+			<form:errors path="nombrePadre" />
 		</div>
 	</div>
 
@@ -56,9 +57,12 @@
 		<div class="col-sm-10">
 			<label class="radio-inline"> <form:radiobutton
 					path="portatil" value="true" /> Si
-			</label> <label class="radio-inline"> <form:radiobutton
+			</label> 
+			<label class="radio-inline" > <form:radiobutton
 					path="portatil" value="false" /> No
 			</label>
+		</div>
+		<div class="col-sm-2" id="pepe" >
 			<form:errors path="portatil" />
 		</div>
 	</div>
@@ -68,7 +72,7 @@
 		<label for="email" class="col-sm-2 control-label">Email</label>
 		<div class="col-sm-10">
 			<form:input path="email" cssClass="form-control" />
-		<form:errors path="email" />
+			<form:errors path="email" />
 		</div>
 
 	</div>
@@ -77,7 +81,7 @@
 		<label for="telefono" class="col-sm-2 control-label">Teléfono</label>
 		<div class="col-sm-10">
 			<form:input path="telefono" cssClass="form-control" />
-		<form:errors path="telefono" />
+			<form:errors path="telefono" />
 		</div>
 	</div>
 
@@ -92,60 +96,82 @@
 </form:form>
 
 <script type="text/javascript">
-$(document).ready(function() {
-	
-	$(".formulario_hoc").validate(
-		{
-			rules: {
-				nombreNino: {
-					required : true,
-					minlength : 2
-				},
-				nombrePadre: {
-					required : true,
-					minlength : 2
-				},
-				edad: {
-					required : true,
-					digits: true,
-					range: [0, 99]
-				},
-				portatil: {
-					required : true
-				},
-				telefono: {
-					required : true,
-					digits: true,
-					minlength : 9,
-					maxlength : 13
-				},
-				email: {
-					required : true,
-					email: true
-				}
-			},
-			highlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-			},
-			unhighlight: function(element) {
-				$(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-			},
-			messages: {
-				nombreNino: {
-					required: "Debe meter un nombre",
-					minlength: "El nombre debe tener 2 caracteres al menos"
-				}, 
-				nombrePadre: {
-					required: "Debe meter un nombre",
-					minlength: "El nombre debe tener 2 caracteres al menos"
-				}, 
-				edad: {
-					required: "Debe poner una edad",
-					digits: "Solo pueden ser digitos",
-					range: "Solo admitimos niños con menos de 100 años"
-				}
-			}
-		}
-	);
-});
+	$(document)
+			.ready(
+					function() {
+
+						$(".formulario_hoc")
+								.validate(
+										{
+											errorPlacement: function(error, element) {
+											    switch (element.attr("name")) {
+										        case 'portatil':
+										            error.insertAfter($("#pepe"));
+										            break;
+										        default:
+										            error.insertAfter(element);
+											    }
+										    },
+											rules : {
+												nombreNino : {
+													required : true,
+													minlength : 2
+												},
+												nombrePadre : {
+													required : true,
+													minlength : 2
+												},
+												edad : {
+													required : true,
+													digits : true,
+													range : [ 0, 99 ]
+												},
+												portatil : {
+													required : true
+												},
+												telefono : {
+													required : true,
+													digits : true,
+													minlength : 9,
+													maxlength : 13
+												},
+												email : {
+													required : true,
+													email : true
+												}
+											},
+											highlight : function(element) {
+												$(element).closest(
+														'.form-group')
+														.removeClass(
+																'has-success')
+														.addClass('has-error');
+											},
+											unhighlight : function(element) {
+												$(element)
+														.closest('.form-group')
+														.removeClass(
+																'has-error')
+														.addClass('has-success');
+											},
+											messages : {
+												nombreNino : {
+													required : "Debe meter un nombre",
+													minlength : "El nombre debe tener 2 caracteres al menos"
+												},
+												nombrePadre : {
+													required : "Debe meter un nombre",
+													minlength : "El nombre debe tener 2 caracteres al menos"
+												},
+												portatil : {
+													required : "Es necesario indicar si traéra portatil"
+												},
+												edad : {
+													required : "Debe poner una edad",
+													digits : "Solo pueden ser digitos",
+													range : "Solo admitimos niños con menos de 100 años"
+												}
+											}
+										});
+					});
 </script>
