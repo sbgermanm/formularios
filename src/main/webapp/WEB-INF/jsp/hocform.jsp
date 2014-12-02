@@ -10,6 +10,24 @@
 	role="form">
 	<c:if test="${param.success eq true}">
 		<div class="alert alert-success">Registration successfull!</div>
+
+
+		<script type="text/javascript">
+			$('#doneDLG').modal();
+		</script>
+
+
+		<script type="text/javascript">
+			$("#doneDLG #myModalLabel").html("Inscripcion realizada con éxito");
+			$("#doneDLG .modal-body")
+					.html(
+							"Se ha realizado la inscripcion correctamente. Se enviará un mensaje de confirmación al correo proporcionado");
+			$("#doneDLG").modal();
+		</script>
+
+
+
+
 	</c:if>
 	<div class="form-group">
 		<label for="nombrenino" class="col-sm-2 control-label">Nombre
@@ -57,12 +75,11 @@
 		<div class="col-sm-10">
 			<label class="radio-inline"> <form:radiobutton
 					path="portatil" value="true" /> Si
-			</label> 
-			<label class="radio-inline" > <form:radiobutton
+			</label> <label class="radio-inline"> <form:radiobutton
 					path="portatil" value="false" /> No
 			</label>
 		</div>
-		<div class="col-sm-2" id="pepe" >
+		<div class="col-sm-2" id="pepe">
 			<form:errors path="portatil" />
 		</div>
 	</div>
@@ -103,15 +120,17 @@
 						$(".formulario_hoc")
 								.validate(
 										{
-											errorPlacement: function(error, element) {
-											    switch (element.attr("name")) {
-										        case 'portatil':
-										            error.insertAfter($("#pepe"));
-										            break;
-										        default:
-										            error.insertAfter(element);
-											    }
-										    },
+											errorPlacement : function(error,
+													element) {
+												switch (element.attr("name")) {
+												case 'portatil':
+													error
+															.insertAfter($("#pepe"));
+													break;
+												default:
+													error.insertAfter(element);
+												}
+											},
 											rules : {
 												nombreNino : {
 													required : true,
@@ -175,3 +194,6 @@
 										});
 					});
 </script>
+
+
+<%@include file="doneDLG.jsp"%>
