@@ -3,8 +3,7 @@
 
 <%@ include file="../layout/taglib.jsp"%>
 
-
-<!-- http://www.mkyong.com/spring-mvc/spring-mvc-dropdown-box-example/ -->
+<%@include file="doneDLG.jsp"%>
 
 <form:form commandName="hoc" class="form-horizontal formulario_hoc"
 	role="form">
@@ -12,8 +11,8 @@
 		<div class="alert alert-success">Registration successfull!</div>
 
 
-		<script type="text/javascript">
-			$('#doneDLG').modal();
+		<script>
+			$('#doneDLG').modal({show:true})
 		</script>
 
 
@@ -112,8 +111,19 @@
 	</div>
 </form:form>
 
+<!-- <a data-toggle="modal" href="#doneDLG" class="btn btn-primary">Launch modal</a> -->
+<!-- <script> 
+
+// $('#openBtn').click(function(){
+// 	$('#myModal').modal({show:true})
+// });
+</script> -->
+
+
+
+
 <script type="text/javascript">
-	$(document)
+$(document)
 			.ready(
 					function() {
 
@@ -196,4 +206,3 @@
 </script>
 
 
-<%@include file="doneDLG.jsp"%>
