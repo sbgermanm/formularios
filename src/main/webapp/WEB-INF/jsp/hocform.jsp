@@ -8,15 +8,8 @@
 <form:form commandName="hoc" class="form-horizontal formulario_hoc"
 	role="form">
 	<c:if test="${param.success eq true}">
-		<div class="alert alert-success">Registration successfull!</div>
-
-
-		<script>
-			$('#doneDLG').modal({show:true})
-		</script>
-
-
 		<script type="text/javascript">
+			$('#doneDLG').modal({show:true})
 			$("#doneDLG #myModalLabel").html("Inscripcion realizada con éxito");
 			$("#doneDLG .modal-body")
 					.html(
