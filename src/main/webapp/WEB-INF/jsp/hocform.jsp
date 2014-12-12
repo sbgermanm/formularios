@@ -13,7 +13,7 @@
 			$("#doneDLG #myModalLabel").html("Inscripcion realizada con éxito");
 			$("#doneDLG .modal-body")
 					.html(
-							"Se ha realizado la inscripcion correctamente. Se enviará un mensaje de confirmación al correo proporcionado");
+							"Se ha realizado la inscripcion correctamente. Se enviará un mensaje de confirmación al correo proporcionado. No es necesaria ninguna otra acción.");
 			$("#doneDLG").modal();
 		</script>
 

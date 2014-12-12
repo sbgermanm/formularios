@@ -60,6 +60,9 @@ public class FormulariosController {
 		if ((null != principal) && (usuarioService.esAdministrador(principal))) {
 			vista = "redirect:/hoc.html?success=true";
 		}
+		
+		hocFormService.enviarEmail(hoc);
+		
 		return vista;
 	}
 

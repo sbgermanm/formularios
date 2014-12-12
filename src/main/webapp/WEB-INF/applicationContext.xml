@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
-	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
@@ -26,7 +23,8 @@
 	<jdbc:embedded-database type="HSQL" id="fuenteDePatos" />
 
 	<!-- emf -->
-	<bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+	<bean
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
 		id="emf">
 		<property name="packagesToScan" value="es.sebas.formularios.Entity" />
 		<property name="dataSource" ref="fuenteDePatos" />
@@ -41,7 +39,7 @@
 		</property>
 	</bean>
 
-	<!-- 	tx -->
+	<!-- tx -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<bean class="org.springframework.orm.jpa.JpaTransactionManager"
@@ -50,11 +48,32 @@
 	</bean>
 
 	<!-- jpa repository -->
-	<jpa:repositories base-package="es.sebas.formularios.Repository" entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager"/>
+	<jpa:repositories base-package="es.sebas.formularios.Repository"
+		entity-manager-factory-ref="emf" transaction-manager-ref="transactionManager" />
 
 
-	<import resource="security.xml"/>
+	<import resource="security.xml" />
 
+
+
+	<!-- mail -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="no.contestar.este.mail.please@gmail.com" />
+		<property name="password" value="cuidado con este correo" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="envioCorreo" class="es.sebas.formularios.Helper.EnvioCorreoImpl">
+		<property name="mailSender" ref="mailSender" />
+	</bean>
 
 
 </beans>
