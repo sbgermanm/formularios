@@ -64,16 +64,14 @@
 		<property name="password" value="cuidado con este correo" />
 		<property name="javaMailProperties">
 			<props>
-				<prop key="mail.transport.protocol">smtp</prop>
+<!-- 				<prop key="mail.transport.protocol">smtp</prop> -->
+				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
 				<prop key="mail.smtp.auth">true</prop>
 				<prop key="mail.smtp.starttls.enable">true</prop>
 			</props>
 		</property>
 	</bean>
 
-	<bean id="envioCorreo" class="es.sebas.formularios.Helper.EnvioCorreoImpl">
-		<property name="mailSender" ref="mailSender" />
-	</bean>
 
 
 </beans>

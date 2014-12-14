@@ -21,6 +21,9 @@ public class HocFormService {
 	@Autowired
 	private HocRepository hocRepository;
 	
+	@Autowired
+	private EnvioCorreo envioCorreo;
+	
 	
 	public void save(Hoc hocform){
 		hocRepository.save(hocform);
@@ -34,7 +37,7 @@ public class HocFormService {
 
 
 	public void enviarEmail(Hoc hoc) {
-		EnvioCorreo envioCorreo = new EnvioCorreoImpl();
+//		EnvioCorreo envioCorreo = new EnvioCorreoImpl();
 		envioCorreo.sendMail("apaFilipense", hoc.getEmail(), "registro talle HOC realizado con exito", "registro talle HOC realizado con exito");
 	}
 }
