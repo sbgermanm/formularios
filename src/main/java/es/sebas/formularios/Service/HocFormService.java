@@ -57,5 +57,7 @@ public class HocFormService {
 					  "Apafilipense." + System.lineSeparator() +
 				      "";
 		envioCorreo.sendMail(from, hoc.getEmail(), subject, body);
+		envioCorreo.sendMail(from, hoc.getEmail(), subject, body);
+
 	}
 }

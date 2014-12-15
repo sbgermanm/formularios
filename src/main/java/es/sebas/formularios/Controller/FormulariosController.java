@@ -42,14 +42,12 @@ public class FormulariosController {
 
 	@RequestMapping(value = "/hoc", method = RequestMethod.POST)
 	public String suscribeHoc(@Valid @ModelAttribute("hoc") Hoc hoc, BindingResult result, Principal principal) {
-		System.out.println("esto...1");
 
 		if (result.hasErrors()) {
 			String vista = "hocform";
 			if ((null != principal) && (usuarioService.esAdministrador(principal))) {
 				vista = "hocformAdmin";
 			}
-			System.out.println("esto...");
 			return vista;
 		}
 
