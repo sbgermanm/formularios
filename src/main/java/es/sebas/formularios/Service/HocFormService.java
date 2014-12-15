@@ -37,6 +37,25 @@ public class HocFormService {
 
 
 	public void enviarEmail(Hoc hoc) {
-		envioCorreo.sendMail("apaFilipense", hoc.getEmail(), "Registro talle HOC realizado con exito", "Registro talle HOC realizado con exito");
+		String from = "ApaFilipense";
+		String subject = "Registro taller HOC realizado con exito";
+		String body = "" + 
+					  "Registro taller HOC realizado con exito." + System.lineSeparator() +
+					  "" + System.lineSeparator() +
+				      "              Datos recogidos" + System.lineSeparator() +
+					  "----------------------------------------" + System.lineSeparator() +
+				      "Nombre niño: " + hoc.getNombreNino() + System.lineSeparator() +
+				      "Edad niño: " + hoc.getEdad() + System.lineSeparator() +
+				      "Curso: " + hoc.getCurso() + System.lineSeparator() +
+				      "Nombre papa: " + hoc.getNombrePadre() + System.lineSeparator() +
+				      "Portatil: " + (hoc.getPortatil() ? "Si" : "No" )   + System.lineSeparator() + 
+				      "Email: " + hoc.getEmail() + System.lineSeparator() +
+				      "Telefono: " + hoc.getTelefono() + System.lineSeparator() +
+					  "" + System.lineSeparator() +
+					  "Nos vemos en el taller" + System.lineSeparator() +
+					  "Un saludo," + System.lineSeparator() +
+					  "Apafilipense." + System.lineSeparator() +
+				      "";
+		envioCorreo.sendMail(from, hoc.getEmail(), subject, body);
 	}
 }
