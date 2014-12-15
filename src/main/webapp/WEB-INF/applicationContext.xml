@@ -54,6 +54,7 @@
 
 	<import resource="security.xml" />
 
+	<import resource="noGithub.xml" />
 
 
 	<!-- mail -->
@@ -61,7 +62,7 @@
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
 		<property name="username" value="no.contestar.este.mail.please@gmail.com" />
-		<property name="password" value="cuidado con este correo" />
+		<property name="password" value="${noReplyMailPassword}" />
 		<property name="javaMailProperties">
 			<props>
 <!-- 				<prop key="mail.transport.protocol">smtp</prop> -->

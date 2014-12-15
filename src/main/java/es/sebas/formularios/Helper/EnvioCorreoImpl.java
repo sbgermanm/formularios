@@ -8,21 +8,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class EnvioCorreoImpl implements EnvioCorreo {
 
-	
-//	http://www.codejava.net/frameworks/spring/sending-e-mail-with-spring-mvc
-//	http://www.mkyong.com/spring/spring-sending-e-mail-via-gmail-smtp-server-with-mailsender/
-//	http://examples.javacodegeeks.com/enterprise-java/spring/mail-spring/spring-e-mail-support-gmail-smtp-server-example/
-	
-	
+	// http://www.codejava.net/frameworks/spring/sending-e-mail-with-spring-mvc
+	// http://www.mkyong.com/spring/spring-sending-e-mail-via-gmail-smtp-server-with-mailsender/
+	// http://examples.javacodegeeks.com/enterprise-java/spring/mail-spring/spring-e-mail-support-gmail-smtp-server-example/
+
 	@Autowired
 	private MailSender mailSender;
-	
 
 	public void setMailSender(MailSender mailSender) {
 		this.mailSender = mailSender;
 	}
-
-
 
 	@Override
 	public void sendMail(String from, String to, String subject, String msg) {

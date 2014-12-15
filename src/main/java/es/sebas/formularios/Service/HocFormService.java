@@ -37,7 +37,6 @@ public class HocFormService {
 
 
 	public void enviarEmail(Hoc hoc) {
-//		EnvioCorreo envioCorreo = new EnvioCorreoImpl();
-		envioCorreo.sendMail("apaFilipense", hoc.getEmail(), "registro talle HOC realizado con exito", "registro talle HOC realizado con exito");
+		envioCorreo.sendMail("apaFilipense", hoc.getEmail(), "Registro talle HOC realizado con exito", "Registro talle HOC realizado con exito");
 	}
 }
