@@ -12,7 +12,7 @@
 		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
 		<property name="properties">
 			<props>
-				<prop key="noReplyMailPassword">algo pondré aqui algun dia</prop>
+				<prop key="noReplyMailPassword">esto es complicado</prop>
 			</props>
 		</property>
 	</bean>

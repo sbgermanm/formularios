@@ -59,7 +59,7 @@ public class FormulariosController {
 			vista = "redirect:/hoc.html?success=true";
 		}
 		
-		hocFormService.enviarEmail(hoc);
+		hocFormService.enviarPreparedEmail(hoc);
 		
 		return vista;
 	}

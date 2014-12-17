@@ -1,10 +1,10 @@
 <html>
 <body>
-<table align="center" border="1" bordercolor="#ccc" cellpadding="5" cellspacing="0" style="border-collapse:collapse;">
+<table align="center" border="0" bordercolor="#ccc" cellpadding="5" cellspacing="0" style="border-collapse:collapse;">
 	<tbody>
 		<tr>
 			<td>
-			<h1 style="font-weight: normal; line-height: 1.2; color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS';"><span style="color:#FFFFFF;"><span style="background-color:#66cc99;">Registro taller HOC realizado con exito</span></span></h1>
+			<h1 style="font-weight: normal; line-height: 1.2; color: rgb(51, 51, 51); font-family: sans-serif, Arial, Verdana, 'Trebuchet MS';"><span style="color:#FFFFFF;"><span style="background-color:#66cc99;">  Registro taller HOC realizado con exito  </span></span></h1>
 			</td>
 		</tr>
 	</tbody>
@@ -13,14 +13,14 @@
 <p><strong><span style="font-size:16px;">Datos recogidos :</span>&nbsp;</strong></p>
 
 <ul>
-	<li><span style="color:#0000FF;">Nombre ni&ntilde;o</span>: ${mensaje.nombreNino}</li>
-	<li><span style="color:#0000FF;">Edad ni&ntilde;o</span>: ${mensaje.edad}</li>
-	<li><span style="color:#0000FF;">Curso: 3&ordm;</span>; ${mensaje.curso}</li>
-	<li><span style="color:#0000FF;">Nombre papa</span>: ${mensaje.nombrePadre}</li>
-	<li><span style="color:#0000FF;">Portatil</span>: ${mensaje.portatilTexto}</li>
-	<li><span style="color:#0000FF;">Email</span>: ${mensaje.email}</li>
-	<li><span style="color:#0000FF;">Tel&eacute;fono</span>: ${mensaje.telefono}</li>
-	<li><span style="color:#0000FF;">Fecha</span>: ${mensaje.fechaRegistro}</li>
+	<li><span style="color:#0000FF;">Nombre ni&ntilde;o:</span> ${mensaje.nombreNino}</li>
+	<li><span style="color:#0000FF;">Edad ni&ntilde;o:</span> ${mensaje.edad}</li>
+	<li><span style="color:#0000FF;">Curso:</span>; ${mensaje.curso}</li>
+	<li><span style="color:#0000FF;">Nombre papa:</span> ${mensaje.nombrePadre}</li>
+	<li><span style="color:#0000FF;">Portatil:</span> ${mensaje.portatilTexto}</li>
+	<li><span style="color:#0000FF;">Email:</span> ${mensaje.email}</li>
+	<li><span style="color:#0000FF;">Tel&eacute;fono:</span> ${mensaje.telefono}</li>
+	<li><span style="color:#0000FF;">Fecha:</span> ${mensaje.fechaRegistro}</li>
 </ul>
 
 <p><br />
@@ -29,3 +29,4 @@ Un saludo,<br />
 Apafilipense.<br />
 &nbsp;</p>
 </body>
+</html>

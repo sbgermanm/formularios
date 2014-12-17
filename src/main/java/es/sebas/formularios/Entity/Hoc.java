@@ -47,6 +47,8 @@ public class Hoc {
 	private String portatilTexto;
 	
 
+
+
 	@NotNull
 	@Digits(integer=2, fraction=0, message = "La edad debe estar entre 0 y 99")
 	private Integer edad;
@@ -116,6 +118,7 @@ public class Hoc {
 
 	public void setPortatil(Boolean portatil) {
 		this.portatil = portatil;
+		setPortatilTexto(portatil ? "Si" : "No");
 	}
 
 
@@ -138,6 +141,14 @@ public class Hoc {
 		this.email = email;
 	}
 	
+	public String getPortatilTexto() {
+		return portatilTexto;
+	}
+
+
+	public void setPortatilTexto(String portatilTexto) {
+		this.portatilTexto = portatilTexto;
+	}
 	
 	
 }

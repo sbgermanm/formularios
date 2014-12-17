@@ -1,12 +1,16 @@
 package es.sebas.formularios.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
+import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.velocity.VelocityEngineUtils;
 
 import es.sebas.formularios.Entity.Hoc;
 import es.sebas.formularios.Helper.EnvioCorreo;
@@ -17,13 +21,20 @@ import es.sebas.formularios.Repository.HocRepository;
 @Transactional
 public class HocFormService {
 	
+	private static final String VM_FILE = "velocity/hoc.vm";
+	private static final String VM_BIND_OBJECT_KEY = "mensaje";
+	
 	
 	@Autowired
 	private HocRepository hocRepository;
 	
 	@Autowired
-	private EnvioCorreo envioCorreo;
+	private EnvioCorreoImpl envioCorreo;
 	
+	@Autowired
+	private VelocityEngine velocityEngine;
+
+
 	
 	public void save(Hoc hocform){
 		hocRepository.save(hocform);
@@ -57,7 +68,22 @@ public class HocFormService {
 					  "Apafilipense." + System.lineSeparator() +
 				      "";
 		envioCorreo.sendMail(from, hoc.getEmail(), subject, body);
-		envioCorreo.sendMail(from, hoc.getEmail(), subject, body);
 
 	}
+
+
+
+	public void enviarPreparedEmail(Hoc hoc) {
+		String from = "ApaFilipense";
+		String subject = "Registro taller HOC realizado con exito";
+
+		
+		Map<String, Object> model = new HashMap<String, Object>();
+		model.put(VM_BIND_OBJECT_KEY, hoc);
+		String text = VelocityEngineUtils.mergeTemplateIntoString(velocityEngine, VM_FILE, "UTF-8", model);
+		envioCorreo.sendPreparedMail(from, hoc.getEmail(), subject, text);
+
+	}
+
+
 }

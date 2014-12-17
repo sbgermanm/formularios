@@ -65,7 +65,7 @@
 		<property name="password" value="${noReplyMailPassword}" />
 		<property name="javaMailProperties">
 			<props>
-<!-- 				<prop key="mail.transport.protocol">smtp</prop> -->
+				<!-- <prop key="mail.transport.protocol">smtp</prop> -->
 				<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
 				<prop key="mail.smtp.auth">true</prop>
 				<prop key="mail.smtp.starttls.enable">true</prop>
@@ -73,6 +73,18 @@
 		</property>
 	</bean>
 
+
+
+	<!-- velocity -->
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<value>
+				resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</value>
+		</property>
+	</bean>
 
 
 </beans>
