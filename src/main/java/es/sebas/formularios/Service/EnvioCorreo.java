@@ -1,4 +1,4 @@
-package es.sebas.formularios.Helper;
+package es.sebas.formularios.Service;
 
 
 public interface EnvioCorreo {

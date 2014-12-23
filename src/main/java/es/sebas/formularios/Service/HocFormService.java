@@ -8,13 +8,10 @@ import javax.transaction.Transactional;
 
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.velocity.VelocityEngineUtils;
 
 import es.sebas.formularios.Entity.Hoc;
-import es.sebas.formularios.Helper.EnvioCorreo;
-import es.sebas.formularios.Helper.EnvioCorreoImpl;
 import es.sebas.formularios.Repository.HocRepository;
 
 @Service

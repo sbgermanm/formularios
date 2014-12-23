@@ -1,4 +1,4 @@
-package es.sebas.formularios.Helper;
+package es.sebas.formularios.Service;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
