@@ -32,7 +32,7 @@ public class EnvioCorreoImplTest {
 		String from = "PruebaFrom";
 		String subject = "Subject prueba";
 		String body = "Body prueba";
-		envioCorreo.sendMail(from, "seyra2000@gmail.com", subject, body);
+//		envioCorreo.sendMail(from, "seyra2000@gmail.com", subject, body);
 		
 		
 		
